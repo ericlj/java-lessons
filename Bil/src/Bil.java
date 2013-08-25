@@ -12,12 +12,18 @@ public class Bil
     }
 
     // Gasa lite
-    void goFaster(int hurMucket)
+    void goFaster(int hurMycket)
     {
-        speed = speed + hurMucket;
-        hastighet.setSpeed(speed);
-        if (speed > 150)
-            System.out.println("Du kör för fort");
+        // Kolla först om vi kan öka hastigheten mera
+        if (speed + hurMycket > 150) {
+            // Nej, det skulle bli för fort
+            System.out.println("Det går inte att öka mera, då går det för fort.");
+        }
+        else {
+            // Japp, det går fint
+            speed = speed + hurMycket;
+            hastighet.setSpeed(speed);
+        }
     }
 
     // Måla om bilen
@@ -39,6 +45,7 @@ public class Bil
     {
         speed = 0;
         hastighet.setSpeed(speed);
+
     }
     // Starta
     public static void main(String[] args) {
